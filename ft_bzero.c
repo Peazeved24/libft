@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+void ft_bzero(void *s, size_t n)
+{
+    unsigned char *ptr;
+
+    ptr = (unsigned char *)s;
+
+    size_t i = 0;
+
+    while(i < n)
+    {
+        ptr[i] = 0;
+        i++;
+    }
+}
