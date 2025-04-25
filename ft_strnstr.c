@@ -1,46 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 20:55:36 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/23 13:50:32 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t i = 0;
-    size_t j = 0;
-    size_t needleL = ft_strlen(needle); // len do meu needle
+	size_t	i;
+	size_t	j;
+	size_t	nlen;
 
-    if(needleL == 0) // se tiver vazia == retorna me haystack.
-    {
-        return (char*)haystack;
-    }
-    
-    if(needleL > len) // caso o meu len de needle for superior a minha len  de busca()
-    {
-        return NULL;
-    }
-
-    while(i + needleL - 1 < len)
-    {
-        j = 0;
-        while(j < needleL)
-        {
-            if(haystack[i + j] != needle[j])
-            {
-                break;
-            }
-            j++; // posicao total do meu needle == needL
-        }
-        if(j == needleL)
-        {
-            return (char*)&haystack[i];
-        }
-        i++;
-    }
-
-    return NULL;
+	nlen = ft_strlen(needle);
+	if (nlen == 0)
+		return ((char *)haystack);
+	if (nlen > len)
+		return (NULL);
+	i = 0;
+	while (i + nlen <= len && haystack[i])
+	{
+		j = 0;
+		while (j < nlen && haystack[i + j] == needle[j])
+		{
+			j++;
+			if (haystack[i + j] != needle[j])
+				break ;
+		}
+		if (j == nlen)
+			return ((char *)&haystack[i]);
+		i++;
+	}
+	return (NULL);
 }
 
-int main()
+/*int main()
 {
     char a[] = "ola mundo";
     char b[] = "m";
-    printf("%s", ft_strnstr(a, b, 5));
+    printf("%s", strnstr(a, b, 5));
     return 0;
-}
+}*/

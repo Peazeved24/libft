@@ -1,28 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 15:56:01 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/23 14:34:07 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-    size_t i = 0;
-    size_t totalL = ft_strlen(s1); + ft_strlen(s2);
+	int		len1;
+	int		len2;
+	int		i;
+	int		j;
+	char	*ptr;
 
-    char *str = (char*)malloc((totalL + 1) * sizeof(char));
-
-    if(str == NULL)
-    {
-        return NULL;
-    }
-    while(*s1) // primeiro pegar o meu "valor" de s1
-    {
-        str[i] = *s1;
-        s1++;
-        i++;
-    }
-    while(*s2) //depois o meu "valor" de s2
-    {
-        str[i] = *s2;
-        s2++;
-        i++;
-    }
-    str[i] = '\0';
-    return str;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);
+	ptr = malloc(len1 + len2 + 1);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < len1)
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (j < len2)
+		ptr[i++] = s2[j++];
+	ptr[i] = '\0';
+	return (ptr);
 }
+
+/*int main()
+{
+    char a[] = "ola ";
+    char b[] = "mundo";
+    char *ptr = ft_strjoin(a, b);
+    printf("%s", ptr);
+    return 0;
+}*/

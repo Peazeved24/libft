@@ -1,67 +1,72 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 19:14:19 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/24 16:08:53 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_cd(int n) // static --- uso exclusivo de uma ft auxiliar.
+#include "libft.h"
+
+static int	ft_cd(int n)
 {
-    int len = 0;
+	int	len;
 
-    if(n <= 0)
-    {
-        len = 1;
-    }
-    else
-    {
-        len = 0;
-    }
-
-    while(n != 0)
-    {
-        len++;
-        n/=10;
-    }
-    return len;
+	if (n <= 0)
+		len = 1;
+	else
+		len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
 
-static int ft_abs(int n)
+static int	ft_abs(int n)
 {
-    if(n < 0)
-    {
-        return -n;
-    }
-    return n;
+	if (n < 0)
+		n = -n;
+	return (n);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int i = 0;
-    int nc = ft_cd(n);
-    int is_neg = (n < 0);
-    char *str;
+	int		i;
+	int		nlen;
+	int		is_neg;
+	char	*str;
 
-    if(!(str = (char*)malloc((nc + 1) * sizeof(char)))) return NULL;
-
-    str[nc] = '\0';
-
-    if(is_neg)
-    {
-        str[0] = '-';
-    }
-    if(n == 0)
-    {
-        str[0] = '0';
-    }
-    if(n > 0 || n <= 0)
-    {
-        i = nc - 1;
-        while(i >= is_neg)
-        {
-            str[i] = ft_abs(n % 10) + '0';
-            n/=10;
-            i--;
-        }
-    }
-
-    return str;
+	is_neg = (n < 0);
+	nlen = ft_cd(n);
+	str = (char *)malloc((nlen + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str[nlen] = '\0';
+	if (is_neg)
+		str[0] = '-';
+	if (n == 0)
+		str[0] = '0';
+	else
+	{
+		i = nlen -1;
+		while (i >= is_neg)
+		{
+			str[i--] = ft_abs(n % 10) + '0';
+			n /= 10;
+		}
+	}
+	return (str);
 }
 
-// itoa == int to ascii/
+/*int main()
+{
+    int n = 10;
+    printf("%s\n", ft_itoa(n));
+    return 0;
+}*/

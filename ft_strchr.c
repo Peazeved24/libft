@@ -1,20 +1,37 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:49:19 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/24 17:21:33 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-    while(*s != '\0')
-    {
-        if(*s == (char)c)
-        {
-            return (char*) s;
-        }
-        s++;
-    }
-    if((char)c == '\0')
-    {
-        return (char *)s;
-    }
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
+}
 
-    return NULL;
-} 
-// procura uma referencia dentro de uma string
+/*int main()
+{
+    char str[] = "progrmação";
+ 
+    printf("Resultado 1: %s\n", ft_strchr(str, 'a'));
+  
+    return 0;
+}*/

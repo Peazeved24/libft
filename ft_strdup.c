@@ -1,24 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:22:44 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/22 01:43:42 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(char *src)
+char	*ft_strdup(const char *s1)
 {
-    int i = 0;
-    int len = ft_strlen(src);
-    char *str = (char*)malloc((len + 1) * sizeof(char));
+	int			i;
+	int			len;
+	char		*str;
 
-    if(str == NULL)
-    {
-        return NULL;
-    }
-
-    while(src[i])
-    {
-        str[i] = src[i];
-        i++;
-    }
-    
-    return str;
+	len = ft_strlen(s1);
+	i = 0;
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
-// duplica uma string
+/*int main()
+{
+    const char a[] = "ola";
+    char *ptr = ft_strdup(a);
+
+    printf("%s", ptr);
+
+    return 0;
+}*/

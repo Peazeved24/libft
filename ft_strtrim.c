@@ -1,55 +1,64 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 16:31:28 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/23 14:07:02 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(const char *str)
+#include "libft.h"
+
+static int	ft_isset(char c, const char *set)
 {
-    int i;
-
-    i = 0;
-    while(str[i])
-    {
-        i++;
-    }
-    return i;
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
 }
 
-int ft_isSet(char c, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-    while(*set)
+	int		i;
+	int		end;
+	int		s;
+	char	*str;
+
+	end = ft_strlen(s1);
+	s = 0;
+	while (s < end && ft_isset(s1[s], set))
+		s++;
+	while (end > s && ft_isset(s1[end - 1], set))
+		end--;
+	str = (char *)malloc((end - s + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < end - s)
+	{
+		str[i] = s1[s + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+/*int main()
+{
+    char a[] = "xxxola mundoxxx";
+    char b[] = "xxx";
+    char *result = ft_strtrim(a, b);
+        
+
+    if(result)
     {
-        if(c == *set)
-        {
-            return 1;
-        }
-        set++;
+        printf("%s", result);
     }
     return 0;
-}
-
-char *ft_strtrim(const char *s1, const char *set)
-{
-    int i;
-    int len;
-    int end;
-    int s;
-    int total;
-    char *str;
-
-    i = 0;
-    len = ft_strlen(s1);
-    end = len;
-    s = 0;
-    while(s < end && ft_isSet(s1[s], set)) // trim nos caractres iniciais 
-        s++;
-    while(end > s && ft_isSet(s1[end - 1], set)) // trim nos caractres finais
-        end--;
-    total = end - s;
-    if (!(str = (char*)malloc((total + 1) * sizeof(char)))) return NULL;
-    while(i < total)
-    {
-        str[i] = s1[s + i];
-        i++;
-    }
-    str[i] = '\0';
-    return str;
-}
+}*/

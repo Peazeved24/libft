@@ -1,41 +1,47 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 15:23:55 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/23 14:21:15 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t    ft_strlen(const char *s)
+#include "libft.h"
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-    int i = 0;
-    
-    while(s[i])
-    {
-        i++;
-    }
-    return i;
+	char	*ptr;
+	size_t	slen;
+	size_t	i;
+
+	i = 0;
+	slen = 0;
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		len = 0;
+	else if (start + len > slen)
+		len = slen - start;
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	while (i < len && s[start + i])
+	{
+		ptr[i] = s[start + i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
 
-char *ft_substr(const char *s, unsigned int start, size_t len)
+/*int main()
 {
-    size_t slen = ft_strlen(s); // tamanho total da string
-    size_t i = 0; // index -=-- cont
-    
-    if(start >= slen) // erro - condicoes de seguranca
-    {
-        return NULL;
-    }
-    if(start + len > slen) // 
-    {
-        return NULL;
-    }
-    
-    char *str = (char*)malloc((len + 1) * sizeof(char)); // malloc para a string
-    if(str == NULL)
-    {
-        return NULL;
-    }
-    while(s[start] != '\0' && i < len)
-    {
-        str[i] = s[start + i];
-        i++;
-    }
-    str[i] = '\0';
-    return str;
-}
+    char a[] = "ola mundo";
+    printf("%s", ft_substr(a, 2, 4));
+    return 0;
+}*/

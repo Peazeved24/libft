@@ -1,22 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 20:39:27 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/24 18:29:07 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    size_t dstL = ft_strlen(dst);
-    size_t srcL = ft_strlen(src);
-    size_t i = 0;
+	size_t	dlen;
+	size_t	slen;
+	size_t	i;
 
-    if(dstL == dstsize)
-    {
-        return dstL + srcL; 
-    }
-
-    while(src[i] && dstL +  i < dstsize - 1)
-    {
-        dst[dstL + i] = src[i];
-        i++;
-    }
-    dst[dstL + i] = '\0';
-
-    return  dstL + srcL;
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
+	i = 0;
+	if (dstsize <= dlen)
+		return (dstsize + slen);
+	while (src[i] && (dlen + i) < dstsize - 1)
+	{
+		dst[dlen + i] = src[i];
+		i++;
+	}
+	dst[dlen + i] = '\0';
+	return (dlen + slen);
 }
+
+/*int main()
+{
+    char a[20] = "ola";
+    char b[20] = " mundo";
+    printf("%i", ft_strlcat(a, b, 4));
+    return 0;
+}*/

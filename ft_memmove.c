@@ -1,29 +1,52 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 20:47:26 by peazeved          #+#    #+#             */
+/*   Updated: 2025/04/25 13:27:36 by peazeved         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    unsigned char* pd = (unsigned char*) dst;
-    const unsigned char* ps = (const unsigned char*) src;
+	unsigned char			*pd;
+	const unsigned char		*ps;
+	size_t					i;
 
-    size_t i = 0;
+	pd = (unsigned char *) dst;
+	ps = (const unsigned char *)src;
+	if (pd < ps)
+	{
+		i = 0;
+		while (i < len)
+		{
+			pd[i] = ps[i];
+			i++;
+		}
+	}
+	else if (pd > ps)
+	{
+		i = len;
+		while (i > 0)
+		{
+			pd[i - 1] = ps[i - 1];
+			i--;
+		}
+	}
+	return (dst);
+}
 
-    if(pd < ps)
-    {
-        while(i < len)
-        {
-            pd[i] = ps[i];
-            i++;
-        }
-    }
-    else if(pd > ps)
-    {
-        i = len;
-        while(i > 0)
-        {
-            pd[i-1] = ps[i-1];
-            i--;
-        }
-    }
+int main()
+{
+    char src[20] = "abcdef"; // Destino começa no meio da fonte.
 
-    return dst;
+    ft_memmove(src + 3, src, 4);
+    printf("%s", src);
+
+    return 0;
 }
