@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 20:59:17 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 18:22:34 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 02:23:12 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /*int main(void)
 {
     char str[] = "Hello, world!";
-	int i = 0;
     char ch = 'o';
     size_t len = sizeof(str);
-    char *result = ft_memchr(str, ch, len);
+    char *result = memchr(str, ch, len);
      
-	printf("Caractere '%c' encontrado na posição: %i", ch, result - str);
+	printf("Caractere '%c' encontrado na posição: %ld\n", ch, result - str);
    
    return 0;
 }*/

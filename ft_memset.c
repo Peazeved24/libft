@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 19:54:41 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 17:06:29 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 01:29:45 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int main()
+/*int main()
 {
     char a[] = "xe de manga";
-    ft_memset(a, 'p', 1);
+    memset(a, 'p', 1);
     printf("%s\n", a);
     return 0;
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:47:26 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/25 13:27:36 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:04:30 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-int main()
+/*int main()
 {
-    char src[20] = "abcdef"; // Destino começa no meio da fonte.
+    char src[20] = "OLA MUNDO";
+    char dst[20]; // Destino começa no meio da fonte.
 
-    ft_memmove(src + 3, src, 4);
-    printf("%s", src);
+    
+    memmove(dst, src, 4);
+    printf("%s", dst);
+    
 
     return 0;
-}
+}*/

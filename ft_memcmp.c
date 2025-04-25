@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:55:23 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 16:48:29 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 00:59:22 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 /*int main()
 {
-    char a[100] = "oLa";
+    char a[100] = "";
     char b[100] = "ola";
     printf("%i\n", ft_memcmp(a, b, 3));
     printf("%i\n", memcmp(a, b, 3));

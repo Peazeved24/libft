@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 20:39:27 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 18:29:07 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:27:04 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
     char a[20] = "ola";
     char b[20] = " mundo";
-    printf("%i", ft_strlcat(a, b, 4));
+    printf("%s", strcat(a, b));
     return 0;
 }*/

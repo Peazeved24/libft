@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:47:51 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/25 13:20:20 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 01:45:00 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*void ft_wtv(unsigned int i, char *str)
-{
-	(void)i;
-	*str = ft_tolower(*str);
-}
-int main()
-{
-	int i = 0;
-	char str[] = "OLA";
-	ft_striteri(str, ft_wtv);
-	printf("%s",str);
-	return 0;
-}*/

@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:49:19 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 17:21:33 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 02:24:40 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ char	*ft_strchr(const char *s, int c)
 
 /*int main()
 {
-    char str[] = "progrmação";
+   char *a = NULL;
+    char z = 'a';
+    char str[] = "programação";
  
-    printf("Resultado 1: %s\n", ft_strchr(str, 'a'));
+    printf("Resultado 1: %s\n", strchr(str, 'a'));
+    printf("Resultado 2: %s\n", strchr(a, 'a')); 
   
     return 0;
 }*/

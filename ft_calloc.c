@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 18:14:16 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 16:35:35 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:49:43 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_calloc(size_t count, size_t size)
     char *ptr;
     int i = 0;
 
-    ptr = (char*)ft_calloc(5,sizeof(char));
+    ptr = (char*)calloc(5,sizeof(char));
 
     while(i < 5)
     {

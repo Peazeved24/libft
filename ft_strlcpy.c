@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:34:51 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 18:34:46 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/22 02:24:51 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (ft_strlen(src));
 }
 
-int main()
+/*int main()
 {
     char a[] = "ola";
-    char b[10];
+    char b[10];s
     strlcpy(b, a, 3);
     printf("%s\n", b);
     return 0;
-}
+}*/

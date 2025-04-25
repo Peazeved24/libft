@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 20:59:27 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 17:17:39 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 12:46:16 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	**ft_split(const char *s, char c)
 
 /*int main()
 {
-    char *str = "ze&da&manga";
+    char *str = "ola&mundo&tudo";
     char **result = ft_split(str, '&');
     int i = 0;
 

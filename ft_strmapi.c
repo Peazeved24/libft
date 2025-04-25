@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:30:18 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 17:56:03 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:24:08 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,18 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	return (ptr);
 }
 
-/*char  ft_wtv(unsigned int i, char c)
+/*char ft_wtv(unsigned int i, char c)
 {
-	(void)i;
-	return ft_tolower(c);
+    if(i % 2 == 0 && c >= 'a' && c <= 'z')
+    {
+        return c - 32;
+    }
+    return c;
 }
 
 int main()
 {
-    char a[] = "OLA";
+    char a[] = "ola";
     char *result = ft_strmapi(a, ft_wtv);
     if(result)
     {

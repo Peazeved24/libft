@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:57:00 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/24 17:09:02 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:04:33 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (s[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		write (fd, &s[i], 1);
 		i++;
 	}
 }
