@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:56:01 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/23 14:34:07 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:25:55 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		j;
 	char	*ptr;
 
+	if (!s1 || !s2)
+	return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	if (!s1 || !s2)
-		return (NULL);
 	ptr = malloc(len1 + len2 + 1);
 	if (!ptr)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:31:28 by peazeved          #+#    #+#             */
-/*   Updated: 2025/04/23 14:07:02 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:26:29 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		s;
 	char	*str;
 
+	if(!s || !set)
+		return NULL;
 	end = ft_strlen(s1);
 	s = 0;
 	while (s < end && ft_isset(s1[s], set))
